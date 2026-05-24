@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from database import init_db
+from routes import cards
 
 
 @asynccontextmanager
@@ -10,8 +11,4 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(lifespan=lifespan)
-
-
-@app.get("/")
-def hello():
-    return {"message": "Hello from FastAPI"}
+app.include_router(cards.router, prefix="/api/cards", tags=["cards"])
