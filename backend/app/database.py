@@ -1,5 +1,5 @@
 from sqlmodel import SQLModel, create_engine
-from models import Card
+from app.models import Card
 
 DATABASE_URL = "sqlite:///./flashcards.db"
 engine = create_engine(DATABASE_URL, echo=True)

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from database import init_db
-from routes import cards
+from app.database import init_db
+from app.routes import cards
 
 
 @asynccontextmanager

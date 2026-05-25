@@ -9,5 +9,5 @@ class Card(SQLModel, table=True):
     category: str = Field(max_length=100)
     question: str
     answer: str
-    known: bool = Field(default_factory=False)
+    known: bool = Field(default=False)
     created_at: datetime = Field(default_factory=datetime.utcnow)
